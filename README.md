@@ -48,3 +48,5 @@
 ## 文档
 
 - [API 接口文档](https://doc.apipost.net/docs/2f642f0f9866000)。
+- [ER 图](https://doc.apipost.net/docs/2f642f0f9866000)。
+- [postgreSQL](https://doc.apipost.net/docs/2f642f0f9866000)。
