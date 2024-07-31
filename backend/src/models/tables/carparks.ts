@@ -11,7 +11,7 @@ export interface carparksAttributes {
   car_park_type: string;
   type_of_parking_system: string;
   short_term_parking: string;
-  free_parking: boolean;
+  free_parking: string;
   night_parking: boolean;
   car_park_decks?: number;
   gantry_height?: number;
@@ -33,7 +33,7 @@ export class carparks extends Model<carparksAttributes, carparksCreationAttribut
   car_park_type!: string;
   type_of_parking_system!: string;
   short_term_parking!: string;
-  free_parking!: boolean;
+  free_parking!: string;
   night_parking!: boolean;
   car_park_decks?: number;
   gantry_height?: number;
@@ -101,10 +101,9 @@ export class carparks extends Model<carparksAttributes, carparksCreationAttribut
       comment: "短期停车"
     },
     free_parking: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING(256),
       allowNull: false,
-      defaultValue: false,
-      comment: "是否提供免费停车（Y\/N）"
+      comment: "是否提供免费停车"
     },
     night_parking: {
       type: DataTypes.BOOLEAN,

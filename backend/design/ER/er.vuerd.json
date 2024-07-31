@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 6000,
     "height": 6000,
-    "scrollTop": -194.99987295826753,
-    "scrollLeft": -2137.885839966553,
+    "scrollTop": -325.99987295826753,
+    "scrollLeft": -1815.8858399665528,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -234,9 +234,9 @@
           {
             "id": "8ab69957-ab59-42a9-a44e-54c24350c616",
             "name": "free_parking",
-            "comment": "是否提供免费停车（Y/N）",
-            "dataType": "boolean",
-            "default": "false",
+            "comment": "是否提供免费停车",
+            "dataType": "varchar(256)",
+            "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
@@ -249,8 +249,8 @@
               "fk": false,
               "pfk": false,
               "widthName": 77.3089599609375,
-              "widthComment": 120,
-              "widthDataType": 60,
+              "widthComment": 106,
+              "widthDataType": 78.68692016601562,
               "widthDefault": 60
             }
           },
@@ -394,10 +394,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 1983.3933,
           "top": 356,
-          "zIndex": 621,
+          "zIndex": 24,
           "widthName": 60,
           "widthComment": 60
         },
@@ -505,7 +505,7 @@
           "active": false,
           "left": 2529.7192,
           "top": 792.6665,
-          "zIndex": 528,
+          "zIndex": 2,
           "widthName": 86.52595520019531,
           "widthComment": 67
         },
@@ -613,7 +613,7 @@
           "active": false,
           "left": 1868.0525,
           "top": 840.9999,
-          "zIndex": 527,
+          "zIndex": 1,
           "widthName": 147.1708984375,
           "widthComment": 80
         },
@@ -741,10 +741,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 2711.8858,
           "top": 570.9999,
-          "zIndex": 716,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60
         },
@@ -875,7 +875,7 @@
           "active": false,
           "left": 2707.8858,
           "top": 308.9999,
-          "zIndex": 712,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },

@@ -11,8 +11,6 @@ export interface sessionInterface {
   sessionID: string;
   username: string;
   user_id: number;
-  name: string;
-  permission: permissionInterface;
 }
 export interface carparksInterface {
   car_park_no: string;
@@ -28,6 +26,17 @@ export interface carparksInterface {
   gantry_height: number;
   car_park_basement: boolean;
 }
+
+export interface UserInterface {
+  username: string;
+  password: string;
+}
 export interface availableInterface {
   available: string;
+}
+export interface JwtPayloadInterface {
+  user_id?: number;
+  username: number;
+  iat: number;
+  exp: number;
 }

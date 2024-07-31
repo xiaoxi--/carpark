@@ -42,6 +42,12 @@ const Runtime: RuntimeInterface = {
   msDomainBase: {
     userOrg: 'localhost:5011',
   },
+  cookieOption: {
+    maxAge: 259200000, //7天
+    httpOnly: true,
+    sameSite: 'lax',
+    domain: 'localhost',
+  },
 };
 
 export default Runtime;
