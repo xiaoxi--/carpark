@@ -2,7 +2,6 @@ import { standardize } from '@/sysInit';
 import _ from 'lodash';
 import { Op } from 'sequelize';
 const { errorCode, XxError } = standardize.errorHandler;
-import { news } from '@/models/tables/init-models';
 abstract class BaseCtrl {
   abstract model: any;
 

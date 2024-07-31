@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 6000,
     "height": 6000,
-    "scrollTop": -893.3333274390968,
-    "scrollLeft": -2193.739573664137,
-    "zoomLevel": 0.9,
+    "scrollTop": -194.99987295826753,
+    "scrollLeft": -2137.885839966553,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -44,13 +44,13 @@
     "tables": [
       {
         "id": "a586736c-49f8-4005-8bbb-835dcfc79cdc",
-        "name": "news",
-        "comment": "咨讯表",
+        "name": "carparks",
+        "comment": "停车场表",
         "columns": [
           {
             "id": "c848ceb0-cd56-4999-b083-c7109364cb24",
-            "name": "news_id",
-            "comment": "咨讯id",
+            "name": "carparks_id",
+            "comment": "停车场id",
             "dataType": "int8",
             "default": "",
             "option": {
@@ -64,16 +64,39 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 71.64094543457031,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             }
           },
           {
+            "id": "cb1575e0-af5e-4d5b-a610-ef0384162fa5",
+            "name": "car_park_no",
+            "comment": "停车场编号",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.51496887207031,
+              "widthComment": 67,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
             "id": "235b64b0-375f-4a22-8a4b-9ee5c78f7725",
-            "name": "title",
-            "comment": "标题",
+            "name": "address",
+            "comment": "地址",
             "dataType": "varchar(256)",
             "default": "",
             "option": {
@@ -94,39 +117,16 @@
             }
           },
           {
-            "id": "8ab69957-ab59-42a9-a44e-54c24350c616",
-            "name": "description",
-            "comment": "描述",
-            "dataType": "text",
+            "id": "324c16a3-0c19-43e5-8535-bd0f59492beb",
+            "name": "x_coord",
+            "comment": "x坐标",
+            "dataType": "float4",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 69.02792358398438,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "a7579874-d717-49b1-9993-46a141407ae2",
-            "name": "content",
-            "comment": "内容",
-            "dataType": "text",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -140,16 +140,16 @@
             }
           },
           {
-            "id": "f60f6ddf-1365-4de6-a43f-fb0ab0d01744",
-            "name": "cover",
-            "comment": "封面图片",
-            "dataType": "varchar(500)",
+            "id": "a9958414-aa83-45c3-94d2-3703fc3e77fd",
+            "name": "y_coord",
+            "comment": "y坐标",
+            "dataType": "float4",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -158,15 +158,61 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "cbd6f1f6-c39c-47de-8a1b-68ccc9093979",
+            "name": "car_park_type",
+            "comment": "停车场类型",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86.52595520019531,
+              "widthComment": 67,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "fac11cf9-b373-4c27-9d76-89fec8d01fa5",
+            "name": "type_of_parking_system",
+            "comment": "停车系统类型",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 147.1708984375,
+              "widthComment": 80,
               "widthDataType": 78.68692016601562,
               "widthDefault": 60
             }
           },
           {
             "id": "80d0e1b2-c2f4-44e9-80b4-f499894aec68",
-            "name": "publisher_user_id",
-            "comment": "发布者用户id",
-            "dataType": "int8",
+            "name": "short_term_parking",
+            "comment": "短期停车",
+            "dataType": "varchar(256)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -179,62 +225,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 106.40290832519531,
-              "widthComment": 77.94598388671875,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "fe497d83-bcb6-4dab-b9ed-cb7383aa8c9c",
-            "name": "views",
-            "comment": "浏览数",
-            "dataType": "int8",
-            "default": "0",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
+              "widthName": 118.24591064453125,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 78.68692016601562,
               "widthDefault": 60
             }
           },
           {
-            "id": "fdf163be-ca3c-426f-9ff3-1cf598d5d132",
-            "name": "audit_state",
-            "comment": "资讯审核状态(0待审核，1审核中，2通过，3未通过)",
-            "dataType": "smallint",
-            "default": "0",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 68.88493347167969,
-              "widthComment": 120,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "0475943d-ca3f-44c7-9607-901e23bed24f",
-            "name": "available",
-            "comment": "资讯状态(0未发布，1发布)",
+            "id": "8ab69957-ab59-42a9-a44e-54c24350c616",
+            "name": "free_parking",
+            "comment": "是否提供免费停车（Y/N）",
             "dataType": "boolean",
             "default": "false",
             "option": {
@@ -248,18 +248,18 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 77.3089599609375,
               "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             }
           },
           {
-            "id": "967c5bb9-4c12-47df-8d4f-d9bba7070886",
-            "name": "\"createdBy\"",
-            "comment": "创建者id",
-            "dataType": "int8",
-            "default": "",
+            "id": "a7579874-d717-49b1-9993-46a141407ae2",
+            "name": "night_parking",
+            "comment": "是否提供夜间停车（Y/N）",
+            "dataType": "boolean",
+            "default": "false",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
@@ -271,8 +271,77 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 74.13694763183594,
+              "widthName": 83.40594482421875,
+              "widthComment": 120,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "0475943d-ca3f-44c7-9607-901e23bed24f",
+            "name": "car_park_decks",
+            "comment": "停车层数",
+            "dataType": "int8",
+            "default": "0",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.01594543457031,
               "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "fe497d83-bcb6-4dab-b9ed-cb7383aa8c9c",
+            "name": "gantry_height",
+            "comment": "闸门高度（米）",
+            "dataType": "int8",
+            "default": "0",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.82194519042969,
+              "widthComment": 93,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "fdf163be-ca3c-426f-9ff3-1cf598d5d132",
+            "name": "car_park_basement",
+            "comment": " 是否为地下停车场（Y/N）",
+            "dataType": "boolean",
+            "default": "false",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 119.50692749023438,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             }
@@ -326,23 +395,23 @@
         ],
         "ui": {
           "active": false,
-          "left": 1979.3933,
-          "top": 354,
-          "zIndex": 6,
+          "left": 1983.3933,
+          "top": 356,
+          "zIndex": 621,
           "widthName": 60,
           "widthComment": 60
         },
         "visible": true
       },
       {
-        "id": "3f369ea7-8417-49be-b448-95a8b40c9ba2",
-        "name": "n_target_org_group",
-        "comment": "资讯目标组织机构-群组表",
+        "id": "f76092df-adfc-48ec-b840-194f78959297",
+        "name": "car_park_type",
+        "comment": "停车场类型",
         "columns": [
           {
-            "id": "b5ce1d9e-d8e9-47eb-87c7-6fd093c2ee30",
-            "name": "n_target_org_group_id",
-            "comment": "问卷目标项id",
+            "id": "e2aafef5-3506-46fd-aaa3-e9124b6cd069",
+            "name": "car_park_type_id",
+            "comment": "停车场类型ID",
             "dataType": "int8",
             "default": "",
             "option": {
@@ -356,40 +425,17 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 137.34292602539062,
-              "widthComment": 77.94598388671875,
+              "widthName": 103.97193908691406,
+              "widthComment": 79.25898742675781,
               "widthDataType": 60,
               "widthDefault": 60
             }
           },
           {
-            "id": "79ef6199-0d1a-4ff9-bc85-5ba092fddb2b",
-            "name": "news_id",
-            "comment": "咨讯id",
-            "dataType": "int8",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "0630a437-3932-4fcd-8efb-734f3e0e46d7",
-            "name": "org_id",
-            "comment": "资讯目标组织id",
-            "dataType": "int8",
+            "id": "4aefb992-0747-4415-a2b2-be24f814cbd6",
+            "name": "car_park_type",
+            "comment": "停车场类型",
+            "dataType": "varchar(256)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -402,37 +448,14 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 90.94598388671875,
-              "widthDataType": 60,
+              "widthName": 86.52595520019531,
+              "widthComment": 67,
+              "widthDataType": 78.68692016601562,
               "widthDefault": 60
             }
           },
           {
-            "id": "8cbab8d7-33f3-4f7a-a91f-476f70f48f23",
-            "name": "role_id_list",
-            "comment": "指定接收资讯的角色",
-            "dataType": "text",
-            "default": "'[]'",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 66.14192199707031,
-              "widthComment": 119,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "2c91758c-110c-4163-afd6-e3247edab841",
+            "id": "9956e996-6334-4a4e-b6fe-91ac0d7ff4c6",
             "name": "\"createdAt\"",
             "comment": "创建时间",
             "dataType": "timestamptz",
@@ -455,7 +478,7 @@
             }
           },
           {
-            "id": "d89a7d93-1f82-4a9a-b22f-575e66c44ee1",
+            "id": "50e59901-7fe5-4f2e-97a6-225cc8459f0d",
             "name": "\"updatedAt\"",
             "comment": "更新时间",
             "dataType": "timestamptz",
@@ -480,23 +503,23 @@
         ],
         "ui": {
           "active": false,
-          "left": 2751.4063,
-          "top": 223,
-          "zIndex": 1,
-          "widthName": 119.89694213867188,
-          "widthComment": 120
+          "left": 2529.7192,
+          "top": 792.6665,
+          "zIndex": 528,
+          "widthName": 86.52595520019531,
+          "widthComment": 67
         },
         "visible": true
       },
       {
-        "id": "d4f44d8c-b402-4b5d-b807-d0e0a06f8e07",
-        "name": "n_target_org",
-        "comment": "资讯目标组织机构-单选表",
+        "id": "3163d341-e413-44aa-988d-40fee0c30e0d",
+        "name": "type_of_parking_system",
+        "comment": "停车系统类型",
         "columns": [
           {
-            "id": "afe431dc-f5f9-48ba-9805-7f0eb3ee7a0d",
-            "name": "n_target_org_id",
-            "comment": "问卷目标项id",
+            "id": "dea4865e-e5d6-4285-bbb2-ae0118ddee31",
+            "name": "type_of_parking_system_id",
+            "comment": "停车系统类型ID",
             "dataType": "int8",
             "default": "",
             "option": {
@@ -510,40 +533,17 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 95.89894104003906,
-              "widthComment": 77.94598388671875,
+              "widthName": 164.61688232421875,
+              "widthComment": 92.25898742675781,
               "widthDataType": 60,
               "widthDefault": 60
             }
           },
           {
-            "id": "3b82f79f-149d-4931-a952-892d775aa928",
-            "name": "news_id",
-            "comment": "咨讯id",
-            "dataType": "int8",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "766db358-0f95-4c85-ab54-783d110157dd",
-            "name": "org_id",
-            "comment": "资讯目标组织id",
-            "dataType": "int8",
+            "id": "11528a35-e87d-436f-a204-6a2c82b7f66d",
+            "name": "type_of_parking_system",
+            "comment": "停车系统类型",
+            "dataType": "varchar(256)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -556,37 +556,14 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 90.94598388671875,
-              "widthDataType": 60,
+              "widthName": 147.1708984375,
+              "widthComment": 80,
+              "widthDataType": 78.68692016601562,
               "widthDefault": 60
             }
           },
           {
-            "id": "5cca5a5a-4673-46dc-83d2-ea380f0754e8",
-            "name": "role_id_list",
-            "comment": "指定接收资讯的角色",
-            "dataType": "text",
-            "default": "'[]'",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 66.14192199707031,
-              "widthComment": 119,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "8d6cbd7c-affc-4abf-8281-62b77e3b6ba6",
+            "id": "c629593a-6d51-4e75-9ebc-7ed8a013134a",
             "name": "\"createdAt\"",
             "comment": "创建时间",
             "dataType": "timestamptz",
@@ -609,7 +586,7 @@
             }
           },
           {
-            "id": "d4549f09-a408-4150-a7bd-5976176ca93f",
+            "id": "eecbf5ea-70fc-4a91-9b74-58d20543af36",
             "name": "\"updatedAt\"",
             "comment": "更新时间",
             "dataType": "timestamptz",
@@ -634,154 +611,23 @@
         ],
         "ui": {
           "active": false,
-          "left": 2765.4063,
-          "top": 445,
-          "zIndex": 3,
-          "widthName": 78.45295715332031,
-          "widthComment": 120
-        },
-        "visible": true
-      },
-      {
-        "id": "fcde6015-447e-4106-a091-f1cf8fe92a9f",
-        "name": "n_target_person",
-        "comment": "问卷目标用户",
-        "columns": [
-          {
-            "id": "844b41fa-e435-488f-aa60-c0d299d5ee02",
-            "name": "n_target_person_id",
-            "comment": "问卷目标项id",
-            "dataType": "int8",
-            "default": "",
-            "option": {
-              "autoIncrement": true,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 116.88092041015625,
-              "widthComment": 77.94598388671875,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "2e1726dd-cf62-4f79-9b7a-9b5d49b7ad6a",
-            "name": "news_id",
-            "comment": "咨讯id",
-            "dataType": "int8",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "31d5d43d-418f-4716-a061-df791313c71f",
-            "name": "user_id",
-            "comment": "指定接收用户id",
-            "dataType": "int8",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 90.94598388671875,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "cc03dff4-ecb4-4d66-9d11-e8d366f26f90",
-            "name": "\"createdAt\"",
-            "comment": "创建时间",
-            "dataType": "timestamptz",
-            "default": "CURRENT_TIMESTAMP",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 72.04393005371094,
-              "widthComment": 60,
-              "widthDataType": 76.39891052246094,
-              "widthDefault": 145.9878692626953
-            }
-          },
-          {
-            "id": "e8dc032a-2b58-477a-9cf9-fabf2986556d",
-            "name": "\"updatedAt\"",
-            "comment": "更新时间",
-            "dataType": "timestamptz",
-            "default": "CURRENT_TIMESTAMP",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 75.48893737792969,
-              "widthComment": 60,
-              "widthDataType": 76.39891052246094,
-              "widthDefault": 145.9878692626953
-            }
-          }
-        ],
-        "ui": {
-          "active": false,
-          "left": 2751.4063,
-          "top": 712,
-          "zIndex": 2,
-          "widthName": 99.4349365234375,
+          "left": 1868.0525,
+          "top": 840.9999,
+          "zIndex": 527,
+          "widthName": 147.1708984375,
           "widthComment": 80
         },
         "visible": true
       },
       {
-        "id": "4982c168-784d-41d4-9337-fb92d3faeda2",
-        "name": "tag",
-        "comment": "资讯类型表",
+        "id": "ec62ed7a-0cec-4ac8-a75a-18f2410ca6ae",
+        "name": "favorites",
+        "comment": "收藏表",
         "columns": [
           {
-            "id": "52a2993b-7ba3-4803-b495-800374fd7a58",
-            "name": "tag_id",
-            "comment": "标签id",
+            "id": "701d1c72-5efa-4cbd-a11d-a6b6faef9adb",
+            "name": "favorites_id",
+            "comment": "收藏ID",
             "dataType": "int8",
             "default": "",
             "option": {
@@ -795,14 +641,37 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 71.91392517089844,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             }
           },
           {
-            "id": "9a0d0e21-ac6c-4b38-bbd0-d6644314639f",
+            "id": "64c356e3-1bc6-4a75-bbe1-48ba552d76c2",
+            "name": "carparks_id",
+            "comment": "停车场id",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 71.64094543457031,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "d7cdbd4f-0a83-4e9b-aaa9-3486741486cb",
             "name": "user_id",
             "comment": "用户ID",
             "dataType": "int8",
@@ -816,7 +685,7 @@
             "ui": {
               "active": false,
               "pk": false,
-              "fk": false,
+              "fk": true,
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
@@ -825,53 +694,7 @@
             }
           },
           {
-            "id": "afdd71a4-ea0e-42c2-acad-27007c17be3b",
-            "name": "tag",
-            "comment": "标签名称",
-            "dataType": "varchar(128)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 76.09992980957031,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "1c8a9d14-ac85-495e-bba5-683730a4e84c",
-            "name": "comment",
-            "comment": "备注",
-            "dataType": "varchar(128)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 76.09992980957031,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "9b612585-2aa1-4195-9ef4-5164b82e6a79",
+            "id": "5f7322f8-049e-4c29-9039-fea97807b726",
             "name": "\"createdAt\"",
             "comment": "创建时间",
             "dataType": "timestamptz",
@@ -894,7 +717,7 @@
             }
           },
           {
-            "id": "882e02c4-2099-4a4d-90fa-49bfea6f24a8",
+            "id": "d9241146-c390-44e4-901c-1d2fe04af8a6",
             "name": "\"updatedAt\"",
             "comment": "更新时间",
             "dataType": "timestamptz",
@@ -918,24 +741,24 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 1303.4063,
-          "top": 57,
-          "zIndex": 5,
+          "active": true,
+          "left": 2711.8858,
+          "top": 570.9999,
+          "zIndex": 716,
           "widthName": 60,
-          "widthComment": 67
+          "widthComment": 60
         },
         "visible": true
       },
       {
-        "id": "84e207ab-5f2a-4978-874f-e8c57e0d8306",
-        "name": "news_tag_relationship",
-        "comment": "资讯类型关系",
+        "id": "e366849a-ca64-4e15-822f-9acf3a057c24",
+        "name": "users",
+        "comment": "用户表",
         "columns": [
           {
-            "id": "e5a66941-3dd1-4889-b551-4b917bc863df",
-            "name": "news_tag_relationship_id",
-            "comment": "资讯类型关系ID",
+            "id": "c0c72ec3-e14d-4def-806a-60f48c26dcd6",
+            "name": "user_id",
+            "comment": "用户ID",
             "dataType": "int8",
             "default": "",
             "option": {
@@ -949,17 +772,40 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 152.72186279296875,
-              "widthComment": 92.25898742675781,
+              "widthName": 60,
+              "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             }
           },
           {
-            "id": "668bbb5f-6f45-4398-96b9-d472afb83c3a",
-            "name": "tag_id",
-            "comment": "标签id",
-            "dataType": "int8",
+            "id": "07569dab-7b8f-4180-91ff-d78ad292de8a",
+            "name": "username",
+            "comment": "用户名",
+            "dataType": "varchar(64)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.66896057128906,
+              "widthComment": 60,
+              "widthDataType": 70.88693237304688,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "2e80934c-0733-4369-988b-d86a7a3e461e",
+            "name": "password",
+            "comment": "密码",
+            "dataType": "varchar(64)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -970,39 +816,16 @@
             "ui": {
               "active": false,
               "pk": false,
-              "fk": true,
+              "fk": false,
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 70.88693237304688,
               "widthDefault": 60
             }
           },
           {
-            "id": "21413e84-3d97-4d24-9556-1cf74f2419f5",
-            "name": "news_id",
-            "comment": "咨讯id",
-            "dataType": "int8",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "c109ad9f-f6ed-4c89-8759-40eb92345c73",
+            "id": "b67e05bc-af25-4b57-a481-31f274fcfd9a",
             "name": "\"createdAt\"",
             "comment": "创建时间",
             "dataType": "timestamptz",
@@ -1011,7 +834,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -1025,16 +848,16 @@
             }
           },
           {
-            "id": "0ae12e60-bfca-449a-9e15-79dd8a0ab4de",
+            "id": "46b3b7ae-9ea1-496f-987f-437c1b692507",
             "name": "\"updatedAt\"",
-            "comment": "更新时间",
+            "comment": "创建时间",
             "dataType": "timestamptz",
             "default": "CURRENT_TIMESTAMP",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -1050,11 +873,11 @@
         ],
         "ui": {
           "active": false,
-          "left": 1966.4063,
-          "top": 57,
-          "zIndex": 4,
-          "widthName": 135.27587890625,
-          "widthComment": 80
+          "left": 2707.8858,
+          "top": 308.9999,
+          "zIndex": 712,
+          "widthName": 60,
+          "widthComment": 60
         },
         "visible": true
       }
@@ -1067,7 +890,7 @@
   "relationship": {
     "relationships": [
       {
-        "id": "bc6d1080-ea78-49aa-a430-68912560c009",
+        "id": "d0c4682c-3235-4251-ac50-bc95a86953d7",
         "identification": false,
         "relationshipType": "ZeroOne",
         "startRelationshipType": "Dash",
@@ -1076,124 +899,46 @@
           "columnIds": [
             "c848ceb0-cd56-4999-b083-c7109364cb24"
           ],
-          "x": 2584.470997753906,
-          "y": 406.5,
+          "x": 2629.2389878662107,
+          "y": 544.25,
           "direction": "right"
         },
         "end": {
-          "tableId": "3f369ea7-8417-49be-b448-95a8b40c9ba2",
+          "tableId": "ec62ed7a-0cec-4ac8-a75a-18f2410ca6ae",
           "columnIds": [
-            "79ef6199-0d1a-4ff9-bc85-5ba092fddb2b"
+            "64c356e3-1bc6-4a75-bbe1-48ba552d76c2"
           ],
-          "x": 2751.4063,
-          "y": 319,
+          "x": 2711.8858,
+          "y": 656.7499,
           "direction": "left"
         },
-        "constraintName": "fk_news_to_n_target_org_group",
+        "constraintName": "fk_carparks_to_favorites",
         "visible": true
       },
       {
-        "id": "6054f5b6-3167-456d-93aa-2a9164f0e779",
+        "id": "26d1dba2-e270-481f-831b-6047e4b5e0f4",
         "identification": false,
-        "relationshipType": "ZeroOne",
+        "relationshipType": "ZeroN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "a586736c-49f8-4005-8bbb-835dcfc79cdc",
+          "tableId": "e366849a-ca64-4e15-822f-9acf3a057c24",
           "columnIds": [
-            "c848ceb0-cd56-4999-b083-c7109364cb24"
+            "c0c72ec3-e14d-4def-806a-60f48c26dcd6"
           ],
-          "x": 2584.470997753906,
-          "y": 511.5,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "d4f44d8c-b402-4b5d-b807-d0e0a06f8e07",
-          "columnIds": [
-            "3b82f79f-149d-4931-a952-892d775aa928"
-          ],
-          "x": 2765.4063,
-          "y": 541,
-          "direction": "left"
-        },
-        "constraintName": "fk_news_to_n_target_org",
-        "visible": true
-      },
-      {
-        "id": "8d276ee6-6b52-468b-917f-44ec19500c86",
-        "identification": false,
-        "relationshipType": "ZeroOne",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "a586736c-49f8-4005-8bbb-835dcfc79cdc",
-          "columnIds": [
-            "c848ceb0-cd56-4999-b083-c7109364cb24"
-          ],
-          "x": 2584.470997753906,
-          "y": 616.5,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "fcde6015-447e-4106-a091-f1cf8fe92a9f",
-          "columnIds": [
-            "2e1726dd-cf62-4f79-9b7a-9b5d49b7ad6a"
-          ],
-          "x": 2751.4063,
-          "y": 797.75,
-          "direction": "left"
-        },
-        "constraintName": "fk_news_to_q_target_person",
-        "visible": true
-      },
-      {
-        "id": "1f8e3d16-23e9-432b-81d0-20ac54862bde",
-        "identification": false,
-        "relationshipType": "ZeroOne",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "a586736c-49f8-4005-8bbb-835dcfc79cdc",
-          "columnIds": [
-            "c848ceb0-cd56-4999-b083-c7109364cb24"
-          ],
-          "x": 2281.932148876953,
-          "y": 354,
-          "direction": "top"
-        },
-        "end": {
-          "tableId": "84e207ab-5f2a-4978-874f-e8c57e0d8306",
-          "columnIds": [
-            "21413e84-3d97-4d24-9556-1cf74f2419f5"
-          ],
-          "x": 2277.0901150024415,
-          "y": 228.5,
+          "x": 2963.823658581543,
+          "y": 480.4999,
           "direction": "bottom"
         },
-        "constraintName": "fk_news_to_news_type_relationship",
-        "visible": true
-      },
-      {
-        "id": "dbe33894-76dd-463d-bf12-a9615f8e67cd",
-        "identification": false,
-        "relationshipType": "ZeroOne",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "4982c168-784d-41d4-9337-fb92d3faeda2",
-          "columnIds": [
-            "52a2993b-7ba3-4803-b495-800374fd7a58"
-          ],
-          "x": 1815.282017163086,
-          "y": 153,
-          "direction": "right"
-        },
         "end": {
-          "tableId": "84e207ab-5f2a-4978-874f-e8c57e0d8306",
+          "tableId": "ec62ed7a-0cec-4ac8-a75a-18f2410ca6ae",
           "columnIds": [
-            "668bbb5f-6f45-4398-96b9-d472afb83c3a"
+            "d7cdbd4f-0a83-4e9b-aaa9-3486741486cb"
           ],
-          "x": 1966.4063,
-          "y": 142.75,
-          "direction": "left"
+          "x": 2967.823658581543,
+          "y": 570.9999,
+          "direction": "top"
         },
-        "constraintName": "fk_tag_to_news_type_relationship",
+        "constraintName": "fk_users_to_favorites",
         "visible": true
       }
     ]
