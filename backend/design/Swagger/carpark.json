@@ -1,0 +1,352 @@
+{
+  "info": { "title": "停车场", "description": "", "version": "1.0.0" },
+  "openapi": "3.0.0",
+  "servers": [{ "url": "", "description": "默认环境", "variables": {} }],
+  "paths": {
+    "/api/v0.1.0/login": {
+      "post": {
+        "summary": "登录",
+        "description": "",
+        "tags": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string", "example": "xiaomi", "description": "用户名" },
+                  "password": { "type": "string", "example": "123123", "description": "密码" }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"登录成功\",\n    \"data\": {\n        \"token\": \"1::418289058929682301\",\n        \"profile\": {\n            \"user_id\": 1,\n            \"username\": \"xiaomi\",\n            \"createdAt\": \"2024-07-31T08:01:38.825Z\",\n            \"updatedAt\": \"2024-07-31T08:01:38.825Z\"\n        }\n    }\n}"
+              }
+            }
+          },
+          "404": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": false,\n    \"statusCode\": 41005,\n    \"message\": \"密码错误\",\n    \"data\": {}\n}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0.1.0/user": {
+      "post": {
+        "summary": "创建用户",
+        "description": "",
+        "tags": ["用户"],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string", "example": "xiaohua", "description": "用户名" },
+                  "password": { "type": "string", "example": "123123", "description": "密码" }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"新增用户成功\",\n    \"data\": {}\n}"
+              }
+            }
+          },
+          "404": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": false,\n    \"statusCode\": 30003,\n    \"message\": \"未找到登录信息，请重新登录\",\n    \"data\": {}\n}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0.1.0/auth/carparks": {
+      "post": {
+        "summary": "导入停车场",
+        "description": "",
+        "tags": ["停车场"],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "会话ID",
+            "required": true,
+            "example": "sessionid=9%3A%3A284937909137278303",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": { "type": "file", "example": "/Users/brook/Downloads/hdb-carpark-information-20220824010400.csv", "description": "停车场" }
+                },
+                "required": ["file"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"导入停车场数据成功\",\n    \"data\": {}\n}"
+              }
+            }
+          },
+          "404": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": false,\n    \"statusCode\": 20402,\n    \"message\": \"操作失败：【AH1】 数据已存在！\",\n    \"data\": {}\n}"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "查询停车场",
+        "description": "",
+        "tags": ["停车场"],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "会话ID",
+            "required": true,
+            "example": "sessionid=9%3A%3A284937909137278303",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "页码",
+            "required": true,
+            "example": "1",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "每页数量",
+            "required": true,
+            "example": "10",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "是否提供夜间停车",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "car_park_decks": {
+                  "type": "integer",
+                  "description": "停车场的层数。"
+                },
+                "car_park_basement": {
+                  "type": "boolean",
+                  "description": "停车场是否提供夜间停车。"
+                }
+              }
+            },
+            "example": {
+              "car_park_decks": 1,
+              "car_park_basement": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "statusCode": 200,
+                  "message": "获取资讯列表成功",
+                  "data": {
+                    "count": 23,
+                    "rows": [
+                      {
+                        "carparks_id": 4570,
+                        "car_park_no": "BBB",
+                        "address": "BLK 232 BRAS BASAH BASEMENT CAR PARK",
+                        "x_coord": 30264.178,
+                        "y_coord": 30994.76,
+                        "car_park_type": "BASEMENT CAR PARK",
+                        "type_of_parking_system": "ELECTRONIC PARKING",
+                        "short_term_parking": "WHOLE DAY",
+                        "free_parking": "NO",
+                        "night_parking": true,
+                        "car_park_decks": 1,
+                        "gantry_height": 2,
+                        "car_park_basement": true,
+                        "createdAt": "2024-07-31T10:17:04.776Z",
+                        "updatedAt": "2024-07-31T10:17:04.776Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": false,
+                  "statusCode": 20201,
+                  "message": "column \"nan\" does not exist",
+                  "data": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0.1.0/auth/favorites": {
+      "post": {
+        "summary": "添加/取消收藏",
+        "description": "",
+        "tags": ["收藏停车场"],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "会话ID",
+            "required": true,
+            "example": "sessionid=9%3A%3A284937909137278303",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": { "carparks_id": { "type": "number", "example": "4457", "description": "停车场ID" } },
+                "required": ["carparks_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"取消收藏停车场成功\",\n    \"data\": {}\n}"
+              }
+            }
+          },
+          "404": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": false,\n    \"statusCode\": 20002,\n    \"message\": \"操作失败：外键不存在,无效的请求参数!\",\n    \"data\": {}\n}"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "获取收藏",
+        "description": "",
+        "tags": ["收藏停车场"],
+        "parameters": [
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "会话ID",
+            "required": true,
+            "example": "sessionid=9%3A%3A284937909137278303",
+            "schema": {
+              "type": "string"
+            }
+          },
+          { "name": "page", "in": "query", "description": "页码", "required": true, "example": "1", "schema": { "type": "string" } },
+          { "name": "count", "in": "query", "description": "每页数量", "required": true, "example": "10", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"获取收藏列表成功\",\n    \"data\": {\n        \"count\": 3,\n        \"rows\": [\n            {\n                \"favorites_id\": 7,\n                \"carparks_id\": 4457,\n                \"user_id\": 1,\n                \"createdAt\": \"2024-07-31T10:41:28.745Z\",\n                \"updatedAt\": \"2024-07-31T10:41:28.745Z\"\n            },\n            {\n                \"favorites_id\": 6,\n                \"carparks_id\": 4454,\n                \"user_id\": 1,\n                \"createdAt\": \"2024-07-31T10:41:24.888Z\",\n                \"updatedAt\": \"2024-07-31T10:41:24.888Z\"\n            },\n            {\n                \"favorites_id\": 4,\n                \"carparks_id\": 4451,\n                \"user_id\": 1,\n                \"createdAt\": \"2024-07-31T10:41:05.689Z\",\n                \"updatedAt\": \"2024-07-31T10:41:05.689Z\"\n            }\n        ]\n    }\n}"
+              }
+            }
+          },
+          "404": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} },
+                "example": "{\n    \"success\": false,\n    \"statusCode\": 20201,\n    \"message\": \"column \\\"nan\\\" does not exist\",\n    \"data\": {}\n}"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    { "name": "用户", "description": "" },
+    { "name": "停车场", "description": "" },
+    { "name": "收藏停车场", "description": "" }
+  ]
+}

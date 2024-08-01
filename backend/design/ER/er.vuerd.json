@@ -1,0 +1,946 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 6000,
+    "height": 6000,
+    "scrollTop": -325.99987295826753,
+    "scrollLeft": -1815.8858399665528,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": true,
+      "columnPrimaryKey": true,
+      "columnUnique": true,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "PostgreSQL",
+    "databaseName": "db_tender",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "pascalCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "id": "a586736c-49f8-4005-8bbb-835dcfc79cdc",
+        "name": "carparks",
+        "comment": "停车场表",
+        "columns": [
+          {
+            "id": "c848ceb0-cd56-4999-b083-c7109364cb24",
+            "name": "carparks_id",
+            "comment": "停车场id",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.64094543457031,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "cb1575e0-af5e-4d5b-a610-ef0384162fa5",
+            "name": "car_park_no",
+            "comment": "停车场编号",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.51496887207031,
+              "widthComment": 67,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "235b64b0-375f-4a22-8a4b-9ee5c78f7725",
+            "name": "address",
+            "comment": "地址",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "324c16a3-0c19-43e5-8535-bd0f59492beb",
+            "name": "x_coord",
+            "comment": "x坐标",
+            "dataType": "float4",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "a9958414-aa83-45c3-94d2-3703fc3e77fd",
+            "name": "y_coord",
+            "comment": "y坐标",
+            "dataType": "float4",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "cbd6f1f6-c39c-47de-8a1b-68ccc9093979",
+            "name": "car_park_type",
+            "comment": "停车场类型",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86.52595520019531,
+              "widthComment": 67,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "fac11cf9-b373-4c27-9d76-89fec8d01fa5",
+            "name": "type_of_parking_system",
+            "comment": "停车系统类型",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 147.1708984375,
+              "widthComment": 80,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "80d0e1b2-c2f4-44e9-80b4-f499894aec68",
+            "name": "short_term_parking",
+            "comment": "短期停车",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 118.24591064453125,
+              "widthComment": 60,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "8ab69957-ab59-42a9-a44e-54c24350c616",
+            "name": "free_parking",
+            "comment": "是否提供免费停车",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.3089599609375,
+              "widthComment": 106,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "a7579874-d717-49b1-9993-46a141407ae2",
+            "name": "night_parking",
+            "comment": "是否提供夜间停车（Y/N）",
+            "dataType": "boolean",
+            "default": "false",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.40594482421875,
+              "widthComment": 120,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "0475943d-ca3f-44c7-9607-901e23bed24f",
+            "name": "car_park_decks",
+            "comment": "停车层数",
+            "dataType": "int8",
+            "default": "0",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.01594543457031,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "fe497d83-bcb6-4dab-b9ed-cb7383aa8c9c",
+            "name": "gantry_height",
+            "comment": "闸门高度（米）",
+            "dataType": "int8",
+            "default": "0",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.82194519042969,
+              "widthComment": 93,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "fdf163be-ca3c-426f-9ff3-1cf598d5d132",
+            "name": "car_park_basement",
+            "comment": " 是否为地下停车场（Y/N）",
+            "dataType": "boolean",
+            "default": "false",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 119.50692749023438,
+              "widthComment": 120,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "f04ba53f-71c5-498d-9c84-4bc7bd999ed2",
+            "name": "\"createdAt\"",
+            "comment": "创建时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.04393005371094,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          },
+          {
+            "id": "12cc08ec-529d-4b07-b144-87f94d3bf190",
+            "name": "\"updatedAt\"",
+            "comment": "更新时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.48893737792969,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          }
+        ],
+        "ui": {
+          "active": true,
+          "left": 1983.3933,
+          "top": 356,
+          "zIndex": 24,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true
+      },
+      {
+        "id": "f76092df-adfc-48ec-b840-194f78959297",
+        "name": "car_park_type",
+        "comment": "停车场类型",
+        "columns": [
+          {
+            "id": "e2aafef5-3506-46fd-aaa3-e9124b6cd069",
+            "name": "car_park_type_id",
+            "comment": "停车场类型ID",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 103.97193908691406,
+              "widthComment": 79.25898742675781,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "4aefb992-0747-4415-a2b2-be24f814cbd6",
+            "name": "car_park_type",
+            "comment": "停车场类型",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86.52595520019531,
+              "widthComment": 67,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "9956e996-6334-4a4e-b6fe-91ac0d7ff4c6",
+            "name": "\"createdAt\"",
+            "comment": "创建时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.04393005371094,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          },
+          {
+            "id": "50e59901-7fe5-4f2e-97a6-225cc8459f0d",
+            "name": "\"updatedAt\"",
+            "comment": "更新时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.48893737792969,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 2529.7192,
+          "top": 792.6665,
+          "zIndex": 2,
+          "widthName": 86.52595520019531,
+          "widthComment": 67
+        },
+        "visible": true
+      },
+      {
+        "id": "3163d341-e413-44aa-988d-40fee0c30e0d",
+        "name": "type_of_parking_system",
+        "comment": "停车系统类型",
+        "columns": [
+          {
+            "id": "dea4865e-e5d6-4285-bbb2-ae0118ddee31",
+            "name": "type_of_parking_system_id",
+            "comment": "停车系统类型ID",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 164.61688232421875,
+              "widthComment": 92.25898742675781,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "11528a35-e87d-436f-a204-6a2c82b7f66d",
+            "name": "type_of_parking_system",
+            "comment": "停车系统类型",
+            "dataType": "varchar(256)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 147.1708984375,
+              "widthComment": 80,
+              "widthDataType": 78.68692016601562,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "c629593a-6d51-4e75-9ebc-7ed8a013134a",
+            "name": "\"createdAt\"",
+            "comment": "创建时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.04393005371094,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          },
+          {
+            "id": "eecbf5ea-70fc-4a91-9b74-58d20543af36",
+            "name": "\"updatedAt\"",
+            "comment": "更新时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.48893737792969,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1868.0525,
+          "top": 840.9999,
+          "zIndex": 1,
+          "widthName": 147.1708984375,
+          "widthComment": 80
+        },
+        "visible": true
+      },
+      {
+        "id": "ec62ed7a-0cec-4ac8-a75a-18f2410ca6ae",
+        "name": "favorites",
+        "comment": "收藏表",
+        "columns": [
+          {
+            "id": "701d1c72-5efa-4cbd-a11d-a6b6faef9adb",
+            "name": "favorites_id",
+            "comment": "收藏ID",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.91392517089844,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "64c356e3-1bc6-4a75-bbe1-48ba552d76c2",
+            "name": "carparks_id",
+            "comment": "停车场id",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 71.64094543457031,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "d7cdbd4f-0a83-4e9b-aaa9-3486741486cb",
+            "name": "user_id",
+            "comment": "用户ID",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "5f7322f8-049e-4c29-9039-fea97807b726",
+            "name": "\"createdAt\"",
+            "comment": "创建时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.04393005371094,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          },
+          {
+            "id": "d9241146-c390-44e4-901c-1d2fe04af8a6",
+            "name": "\"updatedAt\"",
+            "comment": "更新时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.48893737792969,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 2711.8858,
+          "top": 570.9999,
+          "zIndex": 5,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true
+      },
+      {
+        "id": "e366849a-ca64-4e15-822f-9acf3a057c24",
+        "name": "users",
+        "comment": "用户表",
+        "columns": [
+          {
+            "id": "c0c72ec3-e14d-4def-806a-60f48c26dcd6",
+            "name": "user_id",
+            "comment": "用户ID",
+            "dataType": "int8",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "07569dab-7b8f-4180-91ff-d78ad292de8a",
+            "name": "username",
+            "comment": "用户名",
+            "dataType": "varchar(64)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60.66896057128906,
+              "widthComment": 60,
+              "widthDataType": 70.88693237304688,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "2e80934c-0733-4369-988b-d86a7a3e461e",
+            "name": "password",
+            "comment": "密码",
+            "dataType": "varchar(64)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 70.88693237304688,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "b67e05bc-af25-4b57-a481-31f274fcfd9a",
+            "name": "\"createdAt\"",
+            "comment": "创建时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.04393005371094,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          },
+          {
+            "id": "46b3b7ae-9ea1-496f-987f-437c1b692507",
+            "name": "\"updatedAt\"",
+            "comment": "创建时间",
+            "dataType": "timestamptz",
+            "default": "CURRENT_TIMESTAMP",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.48893737792969,
+              "widthComment": 60,
+              "widthDataType": 76.39891052246094,
+              "widthDefault": 145.9878692626953
+            }
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 2707.8858,
+          "top": 308.9999,
+          "zIndex": 4,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "id": "d0c4682c-3235-4251-ac50-bc95a86953d7",
+        "identification": false,
+        "relationshipType": "ZeroOne",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "a586736c-49f8-4005-8bbb-835dcfc79cdc",
+          "columnIds": [
+            "c848ceb0-cd56-4999-b083-c7109364cb24"
+          ],
+          "x": 2629.2389878662107,
+          "y": 544.25,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "ec62ed7a-0cec-4ac8-a75a-18f2410ca6ae",
+          "columnIds": [
+            "64c356e3-1bc6-4a75-bbe1-48ba552d76c2"
+          ],
+          "x": 2711.8858,
+          "y": 656.7499,
+          "direction": "left"
+        },
+        "constraintName": "fk_carparks_to_favorites",
+        "visible": true
+      },
+      {
+        "id": "26d1dba2-e270-481f-831b-6047e4b5e0f4",
+        "identification": false,
+        "relationshipType": "ZeroN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "e366849a-ca64-4e15-822f-9acf3a057c24",
+          "columnIds": [
+            "c0c72ec3-e14d-4def-806a-60f48c26dcd6"
+          ],
+          "x": 2963.823658581543,
+          "y": 480.4999,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "ec62ed7a-0cec-4ac8-a75a-18f2410ca6ae",
+          "columnIds": [
+            "d7cdbd4f-0a83-4e9b-aaa9-3486741486cb"
+          ],
+          "x": 2967.823658581543,
+          "y": 570.9999,
+          "direction": "top"
+        },
+        "constraintName": "fk_users_to_favorites",
+        "visible": true
+      }
+    ]
+  }
+}

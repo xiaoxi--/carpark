@@ -1,0 +1,9 @@
+FROM node:v18.20.2-slim
+
+ENV PROJECTDIR /carpark
+
+WORKDIR  $PROJECTDIR
+
+COPY . .
+
+EXPOSE 5024
