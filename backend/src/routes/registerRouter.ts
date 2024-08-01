@@ -18,8 +18,8 @@ function auth_route_register(app: any, ...routers: any[]) {
 
 // All the APIs need to register here in order to be accessed
 function setRoutes(app: any): void {
-  open_route_register(app, [index]);
-  let auth_routes = [carparks_api, user_api, favorites_api];
+  open_route_register(app, [index, user_api]);
+  let auth_routes = [carparks_api, favorites_api];
   auth_route_register(app, auth_routes);
 }
 

@@ -15,6 +15,8 @@ const { successBody, failBody } = toolKit.utils.backend;
 const { redisServer, cookieOption } = RUNTIME;
 
 router.use('/auth', async function (req: any, res: Response, next) {
+  console.log('====>>>', req.cookies);
+
   let sessionid = req.cookies['sessionid'] ? req.cookies['sessionid'] : '';
   // const sessionid = req.headers['sessionid'] ? req.headers['sessionid'] : '';
   const sessionArr = sessionid.split('::');
