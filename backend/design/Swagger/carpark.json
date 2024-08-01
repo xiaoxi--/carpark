@@ -175,10 +175,23 @@
             "name": "query",
             "in": "query",
             "description": "是否提供夜间停车",
-            "required": false,
-            "example": "",
+            "required": true,
             "schema": {
-              "type": "boolean"
+              "type": "object",
+              "properties": {
+                "car_park_decks": {
+                  "type": "integer",
+                  "description": "停车场的层数。"
+                },
+                "car_park_basement": {
+                  "type": "boolean",
+                  "description": "停车场是否提供夜间停车。"
+                }
+              }
+            },
+            "example": {
+              "car_park_decks": 1,
+              "car_park_basement": true
             }
           }
         ],
