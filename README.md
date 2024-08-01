@@ -48,5 +48,6 @@
 ## 文档
 
 - [API 接口文档](https://doc.apipost.net/docs/2f642f0f9866000)。
+- [Swagger](http://localhost:5000/api/v0.1.0/api-docs)。
 - [ER 图](https://github.com/xiaoxi--/carpark/tree/dev/backend/design/ER)。
 - [postgreSQL](https://github.com/xiaoxi--/carpark/tree/dev/backend/design/postgreSQL)。

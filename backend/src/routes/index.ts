@@ -7,6 +7,10 @@ import { RUNTIME } from '@/env';
 import { sessionInterface } from '@/interfaces';
 import { authValidator, busValidator } from '@/utils/validators';
 import { User } from '@/controllers';
+import swaggerUi from 'swagger-ui-express';
+import fs from 'fs';
+import path from 'path';
+
 const { successBody, failBody } = toolKit.utils.backend;
 const { redisServer, cookieOption } = RUNTIME;
 
@@ -23,6 +27,22 @@ router.use('/auth', async function (req: any, res: Response, next) {
   req.payload = parsedUserInfo;
   // await authorization.isApiAccessible(userInfoObj.permission.role_id, req.method, req.path);
   next();
+});
+
+/**
+ * Swagger 文档
+ * http://localhost:5000/api/v0.1.0/api-docs
+ */
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', async (req: Request, res: Response, next) => {
+  try {
+    const swaggerFilePath = path.resolve(__dirname, '../../design/Swagger/carpark.json');
+    const swaggerDocument = await fs.promises.readFile(swaggerFilePath, 'utf8');
+    const swaggerJson = JSON.parse(swaggerDocument); // 解析JSON文件
+    res.send(swaggerUi.generateHTML(swaggerJson)); // 生成并发送Swagger UI HTML
+  } catch (error) {
+    next(error); // 将错误传递给Express的错误处理中间件
+  }
 });
 
 /**
